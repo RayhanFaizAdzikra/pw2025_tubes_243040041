@@ -43,6 +43,7 @@
             </div>
         </form>
         </div>
+
         <div class="mt-3" style="width: 500px;">
             <?php
                 if(isset($_POST['loginbtn'])){
@@ -55,8 +56,10 @@
                   
                   
                   if($countdata>0){
-                    if(password_verify($password, $data{'password'})){
-
+                    if(password_verify($password, $data['password'])){
+                        $_SESSION['username'] = $data['username'];
+                        $_SESSION['login'] = true;
+                        header('location: ../adminpanel');
                     }
                     else{
                         ?>

@@ -1,5 +1,13 @@
 <?php
-    require "session.php"
+    require "session.php";
+    require "../koneksi.php";
+
+    $queryKategori = mysqli_query($conn, "SELECT * FROM kategori");
+    $jumlahKategori = mysqli_num_rows($queryKategori);
+    
+    $queryProduk = mysqli_query($conn, "SELECT * FROM dokter");
+    $jumlahProduk = mysqli_num_rows($queryProduk);
+    
 ?>
 
 <!DOCTYPE html>
@@ -18,8 +26,13 @@
     }
 
     .summary-kategori {
-        background-color:rgb(9, 107, 205);
-        border-radius: 10px;
+        background-color:rgb(5, 53, 100);
+        border-radius: 15px;
+    }
+
+    .summary-produk {
+        background-color: rgb(7, 163, 35);
+        border-radius: 15px;
     }
 
     .no-decoration {
@@ -42,18 +55,34 @@
 
         <div class="container mt-5"></div>
         <div class="row">
-            <div class="col-lg-4 summary-kategori p-3">
+        <div class="col-lg-4 col-md-6 col-12 mb-3">
+            <div class="summary-kategori p-3">
                 <div class="row">
                     <div class="col-6">
-                        <i class="fas fa-align-justify fa-5x text-black-50"></i>
+                        <i class="fas fa-hospital fa-7x text-black-50"></i>
                     </div>
                     <div class="col-6 text-white">
-                        <h3 class="fs-2">Kategori</h3>
-                        <p class="fs-4">4 Kategori</p>
+                        <h3 class="fs-2">Spesialis</h3>
+                        <p class="fs-4"><?php echo $jumlahKategori?> Spesialis</p>
                         <p><a href="kategori.php" class="text-white no-decoration">Lihat Detail</a></p>
-
                     </div>
                 </div>
+            </div>
+            </div>
+
+             <div class="col-lg-4 col-md-6 col-12 mb-3">
+                <div class="summary-produk p-3">
+                <div class="row">
+                    <div class="col-6">
+                        <i class="fas fa-user-doctor fa-7x text-black-50"></i>
+                    </div>
+                    <div class="col-6 text-white">
+                        <h3 class="fs-2">Doctor</h3>
+                        <p class="fs-4"><?php echo $jumlahProduk?> Doctor</p>
+                        <p><a href="produk.php" class="text-white no-decoration">Lihat Detail</a></p>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </div>

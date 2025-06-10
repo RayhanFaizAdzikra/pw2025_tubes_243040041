@@ -1,6 +1,9 @@
 <?php
     require "session.php";
     require "../koneksi.php";
+
+    $queryKategori =mysqli_query($conn, "SELECT * FROM kategori");
+    $jumlahKategori = mysqli_num_rows($queryKategori);
 ?>
 
 <!DOCTYPE html>
@@ -33,8 +36,55 @@
     </ol>
         </nav>
 
+        <div class="my-5">
+            <h3>Tambah</h3>
+
+            <form action="" method="post">
+                <div>
+                    <label for="kategori">Spesialis</label>
+                    <input type="text" id="kategori" name="kategori" placeholder="input nama kategori" class="form-control">
+                </div>
+            </form>
+        </div>
+
         <div class="mt-3">
             <h2>List Spesialis Docter</h2>
+
+            <div class="table-responsive mt-4">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <?php 
+                       if($jumlahKategori==0){
+                        ?>
+                        <tr>
+                            <td colspan=3 class="text-center">Data Kategori Tidak Tersedia</td>
+                        </tr>
+                        <?php
+                       }
+                       else{
+                        $jumlah = 1;
+                        while($data=mysqli_fetch_array($queryKategori)){
+                            ?>
+                            <tr>
+                                <td><?php echo $jumlah;?></td>
+                                 <td><?php echo $data['nama']; ?></td>
+                                 <td></td>
+                            </tr>
+                    <?php
+                            $jumlah++;
+                        }
+                       }
+                       ?>
+                    </tbody>
+                </table>
+            </div>
 
         </div>
     </div>

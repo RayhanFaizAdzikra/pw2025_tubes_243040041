@@ -36,7 +36,7 @@
             </div>
             <div>
                 <label for="password">Password</label>
-                <input type="text" class="form-control" name="password" id="password">
+                <input type="password" class="form-control" name="password" id="password">
             </div>
             <div>
                 <button class="btn btn-success form-control mt-3" type="submit" name="loginbtn">Login</button>

@@ -22,6 +22,10 @@
         border-radius: 10px;
     }
 
+    .no-decoration {
+        text-decoration: none;
+    }
+    
 
 </style>
 <body>
@@ -43,7 +47,12 @@
                     <div class="col-6">
                         <i class="fas fa-align-justify fa-5x text-black-50"></i>
                     </div>
-                    <div></div>
+                    <div class="col-6 text-white">
+                        <h3 class="fs-2">Kategori</h3>
+                        <p class="fs-4">4 Kategori</p>
+                        <p><a href="kategori.php" class="text-white no-decoration">Lihat Detail</a></p>
+
+                    </div>
                 </div>
             </div>
         </div>

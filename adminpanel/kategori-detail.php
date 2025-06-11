@@ -31,6 +31,7 @@
    
     <div class="mt-5">
         <button type="submit" class="btn btn-primary" name="editBtn">Edit</button>
+         <button type="submit" class="btn btn-danger" name="deleteBtn">Delete</button>
     </div>
     </form>
 
@@ -54,7 +55,40 @@
                 </div>
                 <?php
             }
+            else {
+                 $querySimpan = mysqli_query($conn, "UPDATE kategori SET nama='$kategori' WHERE id='$id'");
+
+                  if($querySimpan){
+                            ?>
+                            <div class="alert alert-success mt-3" role="alert">
+                                Data Berhasil Diupdate!!!
+                            </div>
+                            <meta http-equiv="refresh" content="2; url=kategori.php"/>
+                            <?php
+
+                        }
+                        else {
+                            echo mysqli_error($conn);
+                        }
+            }
           }
+        }
+
+        if(isset($_POST['deleteBtn'])){
+            $queryDelete = mysqli_query($conn, "DELETE FROM kategori WHERE id='$id'");
+            
+            if($queryDelete){
+            ?>
+                <div class="alert alert-primary mt-3" role="alert">
+                    Data Berhasil Dihapus!!!
+                </div>
+
+                <meta http-equiv="refresh" content="2; url=kategori.php"/>
+            <?php
+            }
+            else {
+                echo mysqli_error($conn);
+            }
         }
     ?>
     </div>

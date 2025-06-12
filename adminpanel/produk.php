@@ -2,7 +2,7 @@
     require "session.php";
     require "../koneksi.php";
 
-    $query = mysqli_query($conn, "SELECT * FROM dokter");
+    $query = mysqli_query($conn, "SELECT a.*, b.nama AS nama_kategori FROM dokter a JOIN kategori b ON a.kategori_id=b.id");
     $jumlahDokter = mysqli_num_rows($query);
 
     $queryKategori = mysqli_query($conn, "SELECT * FROM kategori");
@@ -170,7 +170,7 @@
         ?>
      </div> 
 
-     <div class="mt-3">
+     <div class="mt-3 mb-5">
          <h2>List Doctor</h2>
 
          <div class="table-responsive mt-4">
@@ -182,6 +182,7 @@
                         <th>Spesialis Doctor</th>
                         <th>Jadwal Praktek</th>
                         <th>Ketersediaan Antrian</th>
+                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -189,7 +190,7 @@
                      if($jumlahDokter==0){
                     ?>
                          <tr>
-                            <td colspan=5 class="text-center">Data Doctor Tidak Tersedia</td>
+                            <td colspan=6 class="text-center">Data Doctor Tidak Tersedia</td>
                         </tr>
                     <?php
                      }
@@ -200,9 +201,13 @@
                         <tr>
                             <td><?php echo $jumlah; ?></td>
                             <td><?php echo $data['nama']; ?></td>
-                            <td><?php echo $data['kategori_id']; ?></td>
+                            <td><?php echo $data['nama_kategori']; ?></td>
                             <td><?php echo $data['jadwal_praktek']; ?></td>
                             <td><?php echo $data['ketersediaan_antrian']; ?></td>
+                            <td>
+                                <a href="produk-detail.php?q=<?php echo $data['id'];?>" 
+                                class="btn btn-info"><i class="fas fa-search"></i></a>
+                            </td>
                         </tr>
                     <?php
                         $jumlah++;

@@ -75,6 +75,19 @@
         }
 
         if(isset($_POST['deleteBtn'])){
+
+            $queryCheck = mysqli_query($conn, "SELECT * FROM dokter WHERE kategori_id='$id'");
+            $dataCount = mysqli_num_rows($queryCheck);
+           
+            if($dataCount > 0) {
+                ?>
+                <div class="alert alert-warning mt-3" role="alert">
+                    Data Tidak Bisa Dihapus, Karena Masih Ada Dokter Yang Menggunakan Kategori Ini!!!
+                </div>
+                <?php
+            die();
+            }
+
             $queryDelete = mysqli_query($conn, "DELETE FROM kategori WHERE id='$id'");
             
             if($queryDelete){

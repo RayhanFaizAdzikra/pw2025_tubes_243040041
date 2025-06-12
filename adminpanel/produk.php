@@ -128,7 +128,7 @@
                 }
                 else {
                     if($nama_file != ''){
-                        if($image_size > 5000000){
+                        if($image_size > 500000){
                             ?>
                             <div class="alert alert-warning mt-3" role="alert">
                                 Ukuran Foto Terlalu Besar, Maksimal 5MB!!!

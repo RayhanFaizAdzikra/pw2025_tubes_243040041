@@ -150,15 +150,16 @@
                     }
 
                     //query insert to doctor table
-                    $queryTambah = mysqli_query($conn, "INSERT INTO dokter (kategori_id, nama, jadwal_praktek, foto, detail, ketersediaan_antrian) VALUES ('$kategori', '$nama', '$jadwal_praktek', 
-                    '$new_name', '$detail', '$ketersediaan_antrian')");
+                    $queryTambah = mysqli_query($conn, "
+                     INSERT INTO dokter (kategori_id, nama, jadwal_praktek, foto, detail, ketersediaan_antrian) 
+                     VALUES ('$kategori', '$nama', '$jadwal_praktek', '$new_name', '$detail', '$ketersediaanantrian')");
                 
                     if($queryTambah){
                         ?>
                         <div class="alert alert-success mt-3" role="alert">
                             Data Berhasil Ditambahkan!!!
                         </div>
-                        <meta http-equiv="refresh" content="2; url=doctor.php"/>
+                        <meta http-equiv="refresh" content="2; url=produk.php"/>
                         <?php
                     }
                     else {

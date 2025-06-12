@@ -117,6 +117,7 @@
                 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
                 $image_size = $_FILES['foto']['size'];
                 $random_name = generateRandomString(20);
+                $new_name = $random_name . "." . $imageFileType;
 
                 if($nama=='' || $kategori=='' || $jadwal_praktek==''){
                     ?>
@@ -143,9 +144,25 @@
                             <?php
                         }
                         else{
-                                move_uploaded_file($_FILES['foto']['tmp_name'], $target_dir . $random_name . "." . $imageFileType);
+                                move_uploaded_file($_FILES['foto']['tmp_name'], $target_dir . $random_name . "." . $new_name);
                             }
                         }
+                    }
+
+                    //query insert to doctor table
+                    $queryTambah = mysqli_query($conn, "INSERT INTO dokter (kategori_id, nama, jadwal_praktek, foto, detail, ketersediaan_antrian) VALUES ('$kategori', '$nama', '$jadwal_praktek', 
+                    '$new_name', '$detail', '$ketersediaan_anantrian')");
+                
+                    if($queryTambah){
+                        ?>
+                        <div class="alert alert-success mt-3" role="alert">
+                            Data Berhasil Ditambahkan!!!
+                        </div>
+                        <meta http-equiv="refresh" content="2; url=doctor.php"/>
+                        <?php
+                    }
+                    else {
+                        echo mysqli_error($conn);
                     }
                 }
             }

@@ -151,7 +151,7 @@
 
                     //query insert to doctor table
                     $queryTambah = mysqli_query($conn, "INSERT INTO dokter (kategori_id, nama, jadwal_praktek, foto, detail, ketersediaan_antrian) VALUES ('$kategori', '$nama', '$jadwal_praktek', 
-                    '$new_name', '$detail', '$ketersediaan_anantrian')");
+                    '$new_name', '$detail', '$ketersediaan_antrian')");
                 
                     if($queryTambah){
                         ?>

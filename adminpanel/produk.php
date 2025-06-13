@@ -69,7 +69,7 @@
                 <?php
                     while($data=mysqli_fetch_array($queryKategori)){
                     ?>
-                        <option value="<?php echo $data['id']?>"><?php echo $data['nama']?></option>
+                        <option value="<?php echo $data['id']; ?>"><?php echo $data['nama']; ?></option>
                     <?php
                     }
                 ?>

@@ -99,7 +99,7 @@
                  </form>
 
                 <?php
-                    if (isset($_POST['simpan'])) {
+                    if (isset($_POST['update'])) {
                         $nama = htmlspecialchars($_POST['nama']);
                         $kategori = htmlspecialchars($_POST['kategori']);
                         $jadwal_praktek = htmlspecialchars($_POST['jadwal_praktek']);
@@ -124,7 +124,7 @@
 
                         else {
                             $queryUpdate = mysqli_query($conn, "UPDATE dokter SET kategori_id='$kategori', nama='$nama', jadwal_praktek='$jadwal_praktek',
-                             detail='$detail', ketersediaan_antrian='$ketersediaan_antrian' WHERE id='$id'");
+                             detail='$detail', ketersediaan_antrian='$ketersediaan_antrian' WHERE id=$id");
                 if ($nama_file != '') {
             if ($image_size > 4000000) {
           ?>
@@ -150,7 +150,7 @@
                     Data Berhasil Diupdate
                   </div>
 
-                  <meta http-equiv="refresh" content="2 ; url=produk.php" />
+                  <meta http-equiv="refresh" content="2 ; url-produk.php" />
           <?php
                 } else {
                   echo mysqli_error($conn);

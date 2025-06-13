@@ -1,3 +1,8 @@
+<?php
+    require "koneksi.php";
+    $queryDokter = mysqli_query($conn, "SELECT id, nama, jadwal_praktek, foto, detail FROM dokter LIMIT 6");
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,66 +75,18 @@
             <h3>Doctor</h3>
 
             <div class="row mt-5">
+                <?php while($data = mysqli_fetch_array($queryDokter)){ ?>
                 <div class="col-sm-6 col-md-4 mb-3">
                     <div class="card">
-                        <img src="image/dr.hendra.jpg" class="card-img-top" alt="">
+                        <img src="image/<?php echo $data['foto']?>" class="card-img-top" alt="">
                             <div class="card-body">
-                                <h5 class="card-title">Dr. Hendra</h5>
-                                <p class="card-text">Dokter Spesialis Bedah adalah dokter yang ahli melakukan operasi untuk mengobati penyakit, cedera, atau kelainan pada tubuh. Mereka menangani berbagai kasus seperti usus buntu, hernia, tumor, dan luka serius.</p>
+                                <h5 class="card-title"><?php echo $data['nama']?></h5>
+                                <p class="card-text"><?php echo $data['detail']?></p>
                                 <a href="#" class="btn btn-primary">Go</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4">
-                    <div class="card">
-                        <img src="image/dr.amir.jpg" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">Dr. Amir</h5>
-                                <p class="card-text">Dokter Spesialis Anak adalah dokter yang menangani kesehatan, pertumbuhan, dan perkembangan anak mulai dari bayi hingga remaja, termasuk diagnosis dan pengobatan penyakit pada anak.</p>
-                                <a href="#" class="btn btn-primary">Go</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                    <div class="card">
-                        <img src="image/dr.hernawan.jpg" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">Dr. Hernawan</h5>
-                                <p class="card-text mt-4">Dokter Gigi adalah tenaga medis yang khusus menangani kesehatan gigi dan mulut, termasuk perawatan gigi berlubang, pencabutan, pembersihan karang gigi, dan masalah gusi.</p>
-                                <a href="#" class="btn btn-primary">Go</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                    <div class="card">
-                        <img src="image/dr.sarah.jpg" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">Dr. Sarah</h5>
-                                <p class="card-text">Dokter Spesialis Bedah adalah dokter yang ahli melakukan operasi untuk mengobati penyakit, cedera, atau kelainan pada tubuh. Mereka menangani berbagai kasus seperti usus buntu, hernia, tumor, dan luka serius.</p>
-                                <a href="#" class="btn btn-primary">Go</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                    <div class="card">
-                        <img src="image/dr.teguh.jpg" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">Dr. Teguh</h5>
-                                <p class="card-text">Dokter Spesialis Anak adalah dokter yang menangani kesehatan, pertumbuhan, dan perkembangan anak mulai dari bayi hingga remaja, termasuk diagnosis dan pengobatan penyakit pada anak.</p>
-                                <a href="#" class="btn btn-primary">Go</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                    <div class="card">
-                        <img src="image/dr.ghani.jpg" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">Dr. Ghani</h5>
-                                <p class="card-text mt-4">Dokter Gigi adalah tenaga medis yang khusus menangani kesehatan gigi dan mulut, termasuk perawatan gigi berlubang, pencabutan, pembersihan karang gigi, dan masalah gusi.</p>
-                                <a href="#" class="btn btn-primary">Go</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>

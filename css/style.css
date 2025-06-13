@@ -76,7 +76,7 @@
 .background-produk {
   height: 45vh;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(../image/fashion.png);
+    url(../image/banner.png);
   background-position: 50% 35%;
 }
 

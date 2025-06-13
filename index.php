@@ -23,7 +23,7 @@
             <h1>Selamat Datang</h1>
             <h3> Di Rumah Sakit Modern</h3>
             <div class="col-8 offset-md-2">
-                <form method="get" action="dokter.php">
+                <form method="get" action="produk.php">
                 <div class="input-group input-group-lg my-4">
                 <input type="text" class="form-control" placeholder="Cari Dokter, Spesialis, atau Layanan" aria-label="Cari Dokter, Spesialis, atau Layanan" 
                 aria-describedby="button-addon2" name="keyword">
@@ -91,67 +91,15 @@
                     </div>
                     <?php } ?>
                 </div>
+                <a class="btn btn-outline-success mt-3 text-center" href='produk.php'>See More</a>
             </div>
         </div>
        </div>
 
-       <!-- footer -->
-        <div class="container-fluid py-5 bg-dark text-light">
-  <div class="container">
-    <h5 class="text-center mb-4">Temui Kami</h5>
-    <div class="row justify-content-center gap-3">
-      <div class="col-auto">
-        <a href="#" class="text-light text-decoration-none">
-          <i class="bi bi-facebook fs-3"></i>
-        </a>
-      </div>
-      <div class="col-auto">
-        <a href="#" class="text-light text-decoration-none">
-          <i class="bi bi-instagram fs-3"></i>
-        </a>
-      </div>
-      <div class="col-auto">
-        <a href="#" class="text-light text-decoration-none">
-          <i class="bi bi-twitter fs-3"></i>
-        </a>
-      </div>
-      <div class="col-auto">
-        <a href="#" class="text-light text-decoration-none">
-            <i class="bi bi-youtube fs-3"></i>
-        </a>
-    </div>
-</div>
-</div>
-</div>
-    <!-- Subscribe Section -->
-<div class="container-fluid py-5 bg-light text-dark">
-  <div class="container">
-    <h5 class="text-center mt-5 mb-0">Subscribe</h5>
-    <p class="text-center font-monospace">Untuk informasi tentang promo</p>
 
-    <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-      <div class="input-group mb-3">
-        <input type="email" class="form-control" placeholder="Ketikkan Email"
-               aria-label="Email" aria-describedby="button-addon2">
-        <button class="btn btn-warning text-light" type="button" id="button-addon2">
-          Subscribe
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Footer Section -->
-<div class="container-fluid py-3 bg-dark text-light">
-  <div class="container d-flex flex-column flex-md-row justify-content-between text-center text-md-start">
-    <span>&copy; 2025 RS Modern</span>
-    <span>Created by Rayhan</span>
-  </div>
-</div>
-
-
+    <!-- footer -->
+        <?php require "footer.php"?>
     
-
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../fontawesome/js/all.min.js"></script>
 </body>

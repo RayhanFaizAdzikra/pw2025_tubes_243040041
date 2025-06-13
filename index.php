@@ -78,11 +78,14 @@
                 <?php while($data = mysqli_fetch_array($queryDokter)){ ?>
                 <div class="col-sm-6 col-md-4 mb-3">
                     <div class="card">
-                        <img src="image/<?php echo $data['foto']?>" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo $data['nama']?></h5>
+                       <div class="">
+                         <img src="image/<?php echo $data['foto']?>" class="card-img-top" alt="">
+                       </div>                            
+                       <div class="card-body">
+                                <h4 class="card-title"><?php echo $data['nama']?></h4>
                                 <p class="card-text"><?php echo $data['detail']?></p>
-                                <a href="#" class="btn btn-primary">Go</a>
+                                <h5 class="card-title"><?php echo $data['jadwal_praktek']?></h5>
+                                <a href="produk-detail.php?nama=<?php echo $data['nama']?>" class="btn warna2 text-white">Lihat Doctor</a>
                             </div>
                         </div>
                     </div>
@@ -91,6 +94,63 @@
             </div>
         </div>
        </div>
+
+       <!-- footer -->
+        <div class="container-fluid py-5 bg-dark text-light">
+  <div class="container">
+    <h5 class="text-center mb-4">Temui Kami</h5>
+    <div class="row justify-content-center gap-3">
+      <div class="col-auto">
+        <a href="#" class="text-light text-decoration-none">
+          <i class="bi bi-facebook fs-3"></i>
+        </a>
+      </div>
+      <div class="col-auto">
+        <a href="#" class="text-light text-decoration-none">
+          <i class="bi bi-instagram fs-3"></i>
+        </a>
+      </div>
+      <div class="col-auto">
+        <a href="#" class="text-light text-decoration-none">
+          <i class="bi bi-twitter fs-3"></i>
+        </a>
+      </div>
+      <div class="col-auto">
+        <a href="#" class="text-light text-decoration-none">
+            <i class="bi bi-youtube fs-3"></i>
+        </a>
+    </div>
+</div>
+</div>
+</div>
+    <!-- Subscribe Section -->
+<div class="container-fluid py-5 bg-light text-dark">
+  <div class="container">
+    <h5 class="text-center mt-5 mb-0">Subscribe</h5>
+    <p class="text-center font-monospace">Untuk informasi tentang promo</p>
+
+    <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+      <div class="input-group mb-3">
+        <input type="email" class="form-control" placeholder="Ketikkan Email"
+               aria-label="Email" aria-describedby="button-addon2">
+        <button class="btn btn-warning text-light" type="button" id="button-addon2">
+          Subscribe
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer Section -->
+<div class="container-fluid py-3 bg-dark text-light">
+  <div class="container d-flex flex-column flex-md-row justify-content-between text-center text-md-start">
+    <span>&copy; 2025 RS Modern</span>
+    <span>Created by Rayhan</span>
+  </div>
+</div>
+
+
+    
 
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../fontawesome/js/all.min.js"></script>

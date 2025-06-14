@@ -14,6 +14,9 @@
         <li class="nav-item me-4">
           <a class="nav-link" href="produk.php">Doctor</a>
         </li>
+        <li class="nav-item me-4">
+          <a class="nav-link" href="login.php">Logout</a>
+        </li>
       </ul>
     </div>
   </div>
